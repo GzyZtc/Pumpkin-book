@@ -106,7 +106,7 @@
 
 样本在m次采样中始终不被采到的概率$(1-\frac{1}{m})^{m},m\rightarrow \infty$为
 
-$\underset{m\rightarrow \infty}{\lim}(1-\frac{1}{m})^{m}\rightarrow\frac{1}{e}\approx 0.368$
+$$\underset{m\rightarrow \infty}{\lim}(1-\frac{1}{m})^{m}\rightarrow\frac{1}{e}\approx 0.368$$
 
 初始数据集D中约有36.8%的样本未出现在采样数据D'中，将D'用作训练集，将D\D'用作测试集
 <br>
@@ -122,18 +122,30 @@ $\underset{m\rightarrow \infty}{\lim}(1-\frac{1}{m})^{m}\rightarrow\frac{1}{e}\a
 
 回归任务最常用的性能度量是均方误差（MSE）<br>
 
-$E(f;D)=\frac{1}{m}\overset{m}{\underset{i=1}{\sum}}(f(x_i)-y_i)^2$
+$$E(f;D)=\frac{1}{m}\overset{m}{\underset{i=1}{\sum}}(f(x_i)-y_i)^2$$
 
 更一般的，对于数据分布$\mathcal{D}$和概率密度函数$p(·)$,均方误差可描述为
 
 <br>
 
-$E(f;D)=\int_{x\sim\mathcal{D}}(f(x)-y)^2p(x)dx$
+$$E(f;D)=\int_{x\sim\mathcal{D}}(f(x)-y)^2p(x)dx$$
 
 <h3>错误率与精度</h3>
+对样例集D，分类错误率定义为<br>
+
+$$E(f;D)=\frac{1}{m}\underset{i=1}{\overset{m}{\sum}\mathbb{I}}(f(x_i)\neq y_i)$$
+
+精度则定义为<br>
+
+$$acc(f;D)=\frac{1}{m}\overset{m}{\underset{i=1}{\sum}}\mathbb{II}(f(x_i)=y_i) \\=1-E(f;D) $$
+
+
+更一般的
 <h3>查准率，查全率与F1</h3>
 <h3>ROC与AUC</h3>
 <h3>代价敏感错误率与代价曲线</h4>
-<h2>比较检验，假设检验
-<h2>偏差与方差
+<h2>比较检验，假设检验</h2>
+<h2>偏差与方差</h2>
+
+
 
