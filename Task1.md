@@ -126,7 +126,7 @@ $$E(f;D)=\frac{1}{m}\overset{m}{\underset{i=1}{\sum}}(f(x_i)-y_i)^2$$
 
 更一般的，对于数据分布$\mathcal{D}$和概率密度函数$p(·)$,均方误差可描述为
 
-<br>
+
 
 $$E(f;D)=\int_{x\sim\mathcal{D}}(f(x)-y)^2p(x)dx$$
 
@@ -170,10 +170,19 @@ $$R=\frac{TP}{TP+FN}$$
 
 $$F1=\frac{2\times P\times R}{P+R}=\frac{2\times TP}{样例总数+TP-TN}$$
 
+他是基于查准率与查全率的调和平均
+
+$$\frac{1}{F1}=\frac{1}{2}(\frac{1}{P}+\frac{1}{R})$$
+
 $F_{\beta}$度量：
 
 $$F_{\beta}=\frac{(1+\beta^{2})\times P\times R}{(\beta^{2}\times P)+R}$$
 
+$F_{\beta}是基于加权调和平均$
+
+$$\frac{1}{F_{\beta}}=\frac{1}{1+\beta^2}(\frac{1}{P}+\frac{\beta^2}{R})$$
+
+$F_\beta$平均中，$\beta>0$度量了查全率对查准率的相对重要性,$\beta=1$退化为F1，$\beta >1$时查全率有更大影响，$\beta<1$对查准率有更大影响
 
 <h3>ROC与AUC</h3>
 <h3>代价敏感错误率与代价曲线</h4>
