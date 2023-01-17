@@ -114,7 +114,9 @@ $\underset{m\rightarrow \infty}{\lim}(1-\frac{1}{m})^{m}\rightarrow\frac{1}{e}\a
 
 <h2>性能度量</h2>
 
+
 在预测任务中，给定样例集$D=\{(x_{1},y_{1}),(x_2,y_2),...(x_m,y_m)\}$，其中$y_i$时示例$x_i$的真实标记，要评价学习器$f$的性能，就是要把学习器预测结果$f(x)$与真实标记$y$比较
+
 
 <br>
 
@@ -122,7 +124,9 @@ $\underset{m\rightarrow \infty}{\lim}(1-\frac{1}{m})^{m}\rightarrow\frac{1}{e}\a
 
 $E(f;D)=\frac{1}{m}\overset{m}{\underset{i=1}{\sum}}(f(x_i)-y_i)^2$
 
-更一般的，对于数据分布$\mathcal{D}$和概率密度函数$p(·)$,均方误差可描述为<br>
+更一般的，对于数据分布$\mathcal{D}$和概率密度函数$p(·)$,均方误差可描述为
+
+<br>
 
 $E(f;D)=\int_{x\sim\mathcal{D}}(f(x)-y)^2p(x)dx$
 
