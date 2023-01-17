@@ -206,7 +206,7 @@ $$AUC=\frac{1}{2}\overset{m-1}{\underset{i=1}{\sum}}(x_{i+1}-x_i)(y_i+y_{i+1})$$
 
 给定$m^+$个正例和$m^-$个反例，令$D^+$和$D^-$分别表示正/反集合，则排序损失（loss）定义为
 
-$$\mathcal{l}_{rank}=\frac{1}{m^+m^-}\underset{x^+\in D^+}{\sum}\underset{x^-\in D^-}{\sum}（\mathbb{I}(f(x^+)<f(x^-)）\\+\frac{1}{2}\mathbb{I}(f(x^+)=f(x^-))$$
+$$\mathcal{l}_{rank}=\frac{1}{m^+m^-}\underset{x^+\in D^+}{\sum}\underset{x^-\in D^-}{\sum}（\mathbb{I}(f(x^+)<f(x^-))+\frac{1}{2}\mathbb{I}(f(x^+)=f(x^-))$$
 
 $$AUC=1-\mathcal{l}_{rank}$$
 
