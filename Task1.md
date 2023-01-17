@@ -143,7 +143,8 @@ $$acc(f;D)=\frac{1}{m}\overset{m}{\underset{i=1}{\sum}}\mathbb{II}(f(x_i)=y_i) \
 更一般的，对于数据分布$\mathcal{D}$和概率分布密度函数$p(·)$,错误率与精度可分别描述为
 
 $$E(f:\mathcal{D})=\int_{x\sim \mathcal{D}}\mathbb{I}(f(x)\neq y)p(x)dx$$
-$$acc(f;\mathcal{D})=\int_{x\sim\mathcal{D}}\mathbb{I}(f(x)=y)p(x)dx=1-E(f;\mathcal{D})$$
+
+$$acc(f;\mathcal{D})=\int_{x\sim\mathcal{D}}\mathbb{I}(f(x)=y)p(x)dx\=1-E(f;\mathcal{D})$$
 
 
 <h3>查准率，查全率与F1</h3>
@@ -182,7 +183,7 @@ $F_{\beta}是基于加权调和平均$
 
 $$\frac{1}{F_{\beta}}=\frac{1}{1+\beta^2}(\frac{1}{P}+\frac{\beta^2}{R})$$
 
-$F_\beta$平均中，$\beta>0$度量了查全率对查准率的相对重要性,$\beta=1$退化为F1，$\beta >1$时查全率有更大影响，$\beta<1$对查准率有更大影响
+$F_\beta$平均中,$\beta>0$度量了查全率对查准率的相对重要性，$\beta=1$退化为F1，$\beta >1$时查全率有更大影响，$\beta<1$对查准率有更大影响
 
 <h3>ROC与AUC</h3>
 <h3>代价敏感错误率与代价曲线</h4>
