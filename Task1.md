@@ -140,8 +140,41 @@ $$E(f;D)=\frac{1}{m}\underset{i=1}{\overset{m}{\sum}\mathbb{I}}(f(x_i)\neq y_i)$
 $$acc(f;D)=\frac{1}{m}\overset{m}{\underset{i=1}{\sum}}\mathbb{II}(f(x_i)=y_i) \\=1-E(f;D) $$
 
 
-更一般的
+更一般的，对于数据分布$\mathcal{D}$和概率分布密度函数$p(·)$,错误率与精度可分别描述为
+
+$$E(f:\mathcal{D})=\int_{x\sim \mathcal{D}}\mathbb{I}(f(x)\neq y)p(x)dx$$
+$$acc(f;\mathcal{D})=\int_{x\sim\mathcal{D}}\mathbb{I}(f(x)=y)p(x)dx=1-E(f;\mathcal{D})$$
+
+
 <h3>查准率，查全率与F1</h3>
+真正例:TF(true positive)<br>
+假正例:FN(false positive)<br>
+假反例:FN(false negative)<br>
+真反例:TN(true negative)<br>
+TP+FP+TN+FN=样例总数<br>
+
+|真实情况 |预测-|-结果 |
+|--------|----|----- |
+|        |正例|反例   |
+|正例     |TP  |FN   |
+|反例     |FP  |TN   |
+
+查准率P和查全率R分别定义为：
+
+$$P=\frac{TP}{TP+FP}$$
+$$R=\frac{TP}{TP+FN}$$
+
+<b>查准率和查全率是一对矛盾的度量</b>，一般来说，查准率高时，查全率往往偏低；而查全率高时，查准率往往偏低
+
+<b>F1度量</b>
+
+$$F1=\frac{2\times P\times R}{P+R}=\frac{2\times TP}{样例总数+TP-TN}$$
+
+$F_{\beta}$度量：
+
+$$F_{\beta}=\frac{(1+\beta^{2})\times P\times R}{(\beta^{2}\times P)+R}$$
+
+
 <h3>ROC与AUC</h3>
 <h3>代价敏感错误率与代价曲线</h4>
 <h2>比较检验，假设检验</h2>
