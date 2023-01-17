@@ -13,13 +13,13 @@
 一般来说，属性指的是原始数据中的可测量值，而特征指的是数据预处理过程中提取出来的描述数据的信息。<br>
 <strong>属性值</strong><br>
 属性值是表中每一行特定列的值，它可以是数字，文本，日期，布尔值或其他数据类型。<br>
-比如一张员工表<br><strong>
+比如一张员工表<br>
 
 | Employee    | Firts Name  |last Name|Salary |
 | ----------- | ----------- |---------|-------|
 | 1           | John        |Smith    |$50,000|
 | 2           | Jane        |Doe      |$60,000|
-</strong><br>
+<br>
 在这个表中，属性包括 Employee ID, First Name, Last Name, 和 Salary，属性值分别是1, John, Smith, $50,000。<br>
 属性值是每行每列的值，例如第一行第一列的属性值是1，第二行第二列的属性值是Jane等。
 <br>
