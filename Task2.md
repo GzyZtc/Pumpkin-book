@@ -28,6 +28,15 @@ $$E_(\omega,b)=\underset{i=1}{\overset{m}{\sum}}(y_i-\omega x_i-b)^2$$
 
 $$\frac{\partial E_{(\omega,b)}}{\partial \omega}=2(\omega\underset{i=1}{\overset{m}{\sum}}x_i^2-\underset{i=1}{\overset{m}{\sum}}(y_i-b)x_i)$$
 
+$$\frac{\partial E_{(\omega,b)}}{\partial \omega}=2(mb-\underset{i=1}{\overset{m}{\sum}}(y_i-\omega x_i))$$
+
+让偏导数等于零求得极值点，可得到$\omega,b$最优解的闭式解
+
+$$\omega = \frac{\underset{i=1}{\overset{m}{\sum}}y_i(x_i-\overset{-}{x})}{\underset{i=1}{\overset{m}{\sum}}x^2_i-\frac{1}{m}(\underset{i=1}{\overset{m}{\sum}}x_i)^2}$$
+
+$$b=\frac{1}{m}\underset{i=1}{\overset{m}{\sum}}(y_i-\omega x_i)$$
+
+
 
 <h2>对数几率回归
 <h2>LDA
