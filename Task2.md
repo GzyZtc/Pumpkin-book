@@ -36,7 +36,19 @@ $$\omega = \frac{\underset{i=1}{\overset{m}{\sum}}y_i(x_i-\overset{-}{x})}{\unde
 
 $$b=\frac{1}{m}\underset{i=1}{\overset{m}{\sum}}(y_i-\omega x_i)$$
 
+<h3>多元线性回归</h3>
 
+$$X=\begin{pmatrix}
+x_{11}&x_{12}&\cdots&x_{1d}&1\\
+x_{21}&x_{22}&\cdots&x_{2d}&1\\
+\vdots&\vdots&\ddots&\vdots&\vdots\\
+x_{m1}&x_{m2}&\cdots&x_{md}&1
+\end{pmatrix}=\begin{pmatrix}
+x_{1}^{T}&1\\
+x_{2}^{T}&1\\
+\vdots&\vdots\\ 
+x_{m}^{T}&1
+\end{pmatrix}$$
 
 <h2>对数几率回归
 <h2>LDA
