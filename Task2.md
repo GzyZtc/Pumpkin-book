@@ -7,7 +7,7 @@ $$f(x_i)=\omega x_i + b,使得f(x_i)\simeq y_i$$
 
 其中$\omega,b$使得均方误差最小化
 
-$$(\omega ^{},b^{})=\underset{(\omega ,b)}{\argmin}\overset{m}{\underset{i=1}{\sum}}(f(x_i)-y_i)^2(\omega ^{},b^{})=\underset{(\omega ,b)}{\argmin }\overset{m}{\underset{i=1}{\sum}}(\omega x_i+b_i -y_i)^2
+$$(\omega ^{\ast},b^{\ast})=\underset{(\omega ,b)}{argmin}\overset{m}{\underset{i=1}{\sum}}(f(x_i)-y_i)^2=\underset{(\omega ,b)}{argmin }\overset{m}{\underset{i=1}{\sum}}(\omega x_i+b_i -y_i)^2
 $$
 
 a
