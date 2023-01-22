@@ -96,7 +96,7 @@
 
 正则化一般具有以下形式
 
-$$\underset{f\in \mathcal{F}}{min}\frac{N}{i=1}L(y_i,f(x_i))+\lambda J(f)$$
+$$\underset{f\in \mathcal{F}}{min}\overset{N}{\underset{i=1}{\sum}}L(y_i,f(x_i))+\lambda J(f)$$
 
 正则化项可以取不同的形式，在回归问题中，损失函数是平方损失，正则化项可以是参数向量$L_2$的范数：
 
