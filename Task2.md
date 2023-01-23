@@ -1,3 +1,5 @@
+[toc]
+
 <h1>第三章 线性模型</h1>
 <h2>线性回归</h2>
 
@@ -183,7 +185,15 @@ $$\omega =[\omega_1,\dots,\omega_D,b]^T$$
 分别为D+1维的增广特征向量和增广权重向量
 
 标签y=0的后验概率为
-$$p$$
+$$p(y=0|x)=1-p(y=1|x)=\frac{exp(-\omega^{T}x)}{1+exp(-\omega^{T}x)}$$
+
+其中
+
+$$\omega^{T}x=log\frac{p(y=1|x)}{1-p(y=1|x)}=log\frac{p(y=1|x)}{p(y=0|x)}$$
+
+
+$\frac{p(y=1|x)}{p(y=0|x)}$为样本x的正反例后验概率的比值,称为**几率(Odds)**,几率的对数称为**对数几率(Log Odds)**
+
 
 <h2>LDA</h2>
 
