@@ -239,7 +239,7 @@ $$\begin{equation*}
 
 $$\omega_{l+1}\leftarrow w_{l}+\alpha \frac{1}{N}\overset{N}{\underset{n=1}{\sum}}x^{(n)}(y^{(n)}-\hat{y}_{\omega_{l}}^{(n)})$$
 
-其中α为学习率, $\hat{y}_{\omega_{l}}^{(n)}$ 是参数为 $ω_{l}$ 时,Logistic回归模型的输出
+其中α为学习率,  $\hat{y}_{\omega_{l}}^{(n)}$ 是参数为 $ω_{l}$ 时,Logistic回归模型的输出
 
 <br>
 
@@ -247,3 +247,8 @@ $$\omega_{l+1}\leftarrow w_{l}+\alpha \frac{1}{N}\overset{N}{\underset{n=1}{\sum
 <h4>牛顿法</h4>
 <h2>LDA</h2>
 
+**参考资料**
+
+周志华.机器学习<br>
+李航.统计学习方法(第二版)<br>
+邱锡鹏.神经网络与机器学习<br>
