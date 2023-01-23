@@ -239,7 +239,7 @@ $$\begin{equation*}
 
 $$\omega_{l+1}\leftarrow w_{l}+\alpha \frac{1}{N}\overset{N}{\underset{n=1}{\sum}}x^{(n)}(y^{(n)}-\hat{y}_{\omega_{l}}^{(n)})$$
 
-其中α为学习率, $\hat{y}_{\omega_{l}}^{(n)}$是参数为 $ω_{l}$时,Logistic回归模型的输出
+其中α为学习率, $\hat{y}_{\omega_{l}}^{(n)}$ 是参数为 $ω_{l}$时,Logistic回归模型的输出
 
 <br>
 
