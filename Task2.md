@@ -245,7 +245,9 @@ $$\omega_{l+1}\leftarrow w_{l}+\alpha \frac{1}{N}\overset{N}{\underset{n=1}{\sum
 
 
 <h4>牛顿法</h4>
-<h2>LDA</h2>
+详见西瓜书
+
+<br>
 
 **参考资料**
 
