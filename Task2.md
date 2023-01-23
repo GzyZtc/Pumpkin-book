@@ -107,7 +107,24 @@ $$L(\omega)=\frac{1}{N}\overset{N}{\underset{i=1}{\sum}}(f(x_{i};w)-y_i)^2+\frac
 即使在我们⽆法得到解析解的情况下，我们仍然可以有效地训练模型。在许多任务上，那些难以优化的模型
 效果要更好。因此，弄清楚如何训练这些难以优化的模型是⾮常重要的。<br>
 
+梯度下降最简单的⽤法是计算损失函数（数据集中所有样本的损失均值）关于模型参数的导数（在这⾥也可以称为梯度）。在每次迭代中，我们⾸先随机抽样⼀个⼩批量$\beta$，它是由固定数量的训练样本组成的。然后，我们计算小批量的平均损失关于模型参数的导数（也可以称为梯度）。最后，我们将梯度乘以⼀个预先确定的正数η，并从
+当前参数的值中减掉。
 
+我们用下面的数学公式来表示这一更新过程
+
+$$(\omega,b)←(\omega,b)-\frac{\eta}{|\mathcal{B}|}\underset{i\in \mathcal{B}}{\sum}\partial_{\omega,b}l^{(i)}(\omega,b)$$
+
+其算法的步骤如下:
+<ol>
+<li>初始化模型参数的值,如随机初始化</li>
+<li>从数据集中随机抽取小批样且在负梯度的方向上更新参数,且不断迭代这一步骤</li>
+</ol>
+
+对于平方损失和仿射变换,我们可以写成如下形式:
+
+$$\omega \leftarrow\omega-\frac{\eta}{|\mathcal{B}|}\underset{i\in\mathcal{B}}{\sum}\partial_{\omega}l^{(i)}(\omega,b)=\omega-\frac{\eta}{|\mathcal{B}|}\underset{i\in\mathcal{B}}{\sum}x^{(i)}(\omega^{T}x^{(i)}+b-y^{(i)})$$
+
+$$b \leftarrow b-\frac{\eta}{|\mathcal{B}|}\underset{i\in\mathcal{B}}{\sum}\partial_{b}l^{(i)}(\omega,b)=b-\frac{\eta}{|\mathcal{B}|}\underset{i\in\mathcal{B}}{\sum}x^{(i)}(\omega^{T}x^{(i)}+b-y^{(i)})$$
 
 <h2>对数几率回归
 <h2>LDA
