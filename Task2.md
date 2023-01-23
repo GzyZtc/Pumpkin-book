@@ -249,7 +249,7 @@ $$\omega_{l+1}\leftarrow w_{l}+\alpha \frac{1}{N}\overset{N}{\underset{n=1}{\sum
 
 <br>
 
-**参考资料**
+<h4>参考资料</h4>
 
 周志华.机器学习<br>
 李航.统计学习方法(第二版)<br>
