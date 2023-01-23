@@ -1,7 +1,7 @@
-[toc]
 
-#第三章 线性模型
-##线性回归
+
+<h1>第三章 线性模型</h1>
+<h2>线性回归</h2>
 
 给定数据集
 
@@ -20,7 +20,7 @@ $$f(x_i)=\omega x_i + b,使得f(x_i)\simeq y_i$$
 $$(\omega ^{\ast},b^{\ast})=\underset{(\omega ,b)}{argmin}\overset{m}{\underset{i=1}{\sum}}(f(x_i)-y_i)^2=\underset{(\omega ,b)}{argmin }\overset{m}{\underset{i=1}{\sum}}(\omega x_i+b_i -y_i)^2
 $$
 
-###解析解
+<h3>解析解</h3>
 
 基于均方误差最小化来进行模型求解的方法称作**最小二乘法(least square method)**,在线性回归中，最小二乘法就是试图找到一条直线，使得所有样本到直线上的欧式距离之和最小
 
@@ -92,7 +92,7 @@ $$f(\hat{x_{i}})=\hat{x_{i}}(X^{T}X)^{-1}X^{T}y$$
 
 若$X^{T}X$不满秩,则对于矩阵方程可能有多个解$\hat{\omega}$,他们都能使得均方差无最小化,引入正则化项决定学习算法的归纳偏好
 
-###正则化
+<h3>正则化</h3>
 
 模型选择的典型方法是正则化(regularization)。正则化是结构风险最小化策略的实现，是在经验风险上加一个正则化项(regularizer)或罚项(penalty term)。正则化一般是模型复杂度的单调递增，模型越复杂，正则化就越大。
 
@@ -109,7 +109,7 @@ $$L(\omega)=\frac{1}{N}\overset{N}{\underset{i=1}{\sum}}(f(x_{i};w)-y_i)^2+\frac
 <br>
 像线性回归这样的简单问题存在解析解，但不是所有的问题都存在解析解，解析解可以很好的进行数学分析，但解析解对问题的限制很严格。
 
-###随机梯度下降
+<h3>随机梯度下降</h3>
 即使在我们无法得到解析解的情况下，我们仍然可以有效地训练模型。在许多任务上，那些难以优化的模型效果要更好。因此，弄清楚如何训练这些难以优化的模型是非常重要的。<br>
 
 梯度下降最简单的⽤法是计算损失函数（数据集中所有样本的损失均值）关于模型参数的导数（在这⾥也可以称为梯度）。在每次迭代中，我们首先随机抽样⼀个小批量$\beta$，它是由固定数量的训练样本组成的。然后，我们计算小批量的平均损失关于模型参数的导数（也可以称为梯度）。最后，我们将梯度乘以⼀个预先确定的正数η，并从
@@ -136,8 +136,8 @@ $$b \leftarrow b-\frac{\eta}{|\mathcal{B}|}\underset{i\in\mathcal{B}}{\sum}\part
 
 在训练了若干迭代次数后,我们记录模型参数的估计值,表示为$\hat{\omega},\hat{b}$,但是即使我们的函数是线性的且无噪声的,这些估计值也不会使得损失函数真正地达到最小值.因为算法会使得损失向最小值缓慢收敛,但却不能在有限的步数内非常精确地达到最小值.
 
-###正态分布与平方损失
-
+<h3>正态分布与平方损失
+</h3>
 正态分布和线性回归之间的关系很密切。正态分布（normal distribution），也称为高斯分布（Gaussian distribution），最早由德国数学家高斯（Gauss）应⽤于天文学研究。简单的说，若随机变量x具有均值µ和方差σ2（标准差σ），其正态分布概率密度函数如下：
 
 $$p(x)=\frac{1}{\sqrt{2\pi\sigma^2}}exp(-\frac{1}{2\sigma^2}(x-\mu)^2)$$
@@ -198,8 +198,8 @@ $$\omega^{T}x=log\frac{p(y=1|x)}{1-p(y=1|x)}=log\frac{p(y=1|x)}{p(y=0|x)}$$
 
 $\frac{p(y=1|x)}{p(y=0|x)}$为样本x的正反例后验概率的比值,称为**几率(Odds)**,几率的对数称为**对数几率(Log Odds)**
 
-###参数学习
-####交叉熵
+<h3>参数学习</h3>
+<h4>交叉熵</h4>
 logistic回归采用交叉熵作为损失函数,并使用梯度下降法对参数进行优化
 <br>
 
@@ -225,8 +225,25 @@ $$\begin{equation*}
 \end{split}
 \end{equation*}$$
 
+风险函数$\mathcal{R}(\omega)$关于参数$\omega$的偏导数为
+
+$$\begin{equation*}
+\begin{split}
+\frac{\partial\mathcal{R}_{(\omega)}}{\partial_{\omega}}&=-\frac{1}{N}\overset{N}{\underset{n=1}{\sum}}(y^{(n)}\frac{\hat{y}^{(n)}(1-\hat{y}^{(n)})}{\hat{y}^{(n)}}x^{(n)}-(1-y^{(n)})\frac{\hat{y}^{(n)}(1-\hat{y}^{(n)})}{1-\hat{y}^{(n)}}x^{(n)})\\ 
+&=-\frac{1}{N}\overset{N}{\underset{n=1}{\sum}}(y^{(n)}(1-\hat{y}^{(n)})x^{(n)}-(1-y^{(n)})\hat{y}^{(n)}x^{(n)})\\ 
+&=-\frac{1}{N}\overset{N}{\underset{n=1}{\sum}}x^{(n)}(y^{(n)}-\hat{y}^{(n)})\\
+\end{split}
+\end{equation*}$$
+
+采用梯度下降法,Logistic回归训练的过程为:初始化$ω_{0}←0$,然后通过下式来迭代更新参数
+
+$$\omega_{l+1}\leftarrow w_{l}+\alpha \frac{1}{N}\overset{N}{\underset{n=1}{\sum}}x^{(n)}(y^{(n)}-\hat{y}_{\omega_{l}}^{(n)})$$
+
+其中α为学习率,$\hat{y}_{\omega_{l}}^{(n)}$是参数为$ω_{l}$时,Logistic回归模型的输出
+
+<br>
 
 
-####牛顿法
+<h4>牛顿法</h4>
 <h2>LDA</h2>
 
