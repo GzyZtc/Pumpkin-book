@@ -15,7 +15,7 @@ $$x_i=(x_{i1};_{i2};...;x_{id}),y_i \in \mathbb{R}$$
 
 $$f(x_i)=\omega x_i + b,使得f(x_i)\simeq y_i$$
 
-其中$\omega,b$使得均方误差最小化
+其中 $\omega,b$ 使得均方误差最小化
 
 $$(\omega ^{\ast},b^{\ast})=\underset{(\omega ,b)}{argmin}\overset{m}{\underset{i=1}{\sum}}(f(x_i)-y_i)^2=\underset{(\omega ,b)}{argmin }\overset{m}{\underset{i=1}{\sum}}(\omega x_i+b_i -y_i)^2
 $$
@@ -24,11 +24,11 @@ $$
 
 基于均方误差最小化来进行模型求解的方法称作**最小二乘法(least square method)**,在线性回归中，最小二乘法就是试图找到一条直线，使得所有样本到直线上的欧式距离之和最小
 
-求解$\omega,b$,使得
+求解 $\omega,b$ ,使得
 
 $$E_(\omega,b)=\underset{i=1}{\overset{m}{\sum}}(y_i-\omega x_i-b)^2$$
 
-最小化的过程，成为线性回归的最小二乘**参数估计(pamameter estimation)**。对$E_{(\omega,b)}$分别对$\omega$和$b$求导，得到
+最小化的过程，成为线性回归的最小二乘**参数估计(pamameter estimation)**。对 $E_{(\omega,b)}$ 分别对 $\omega$ 和 $b$ 求导，得到
 
 $$\begin{equation*}
 \begin{split}
@@ -38,7 +38,7 @@ $$\begin{equation*}
 \end{equation*}$$
 
 
-让偏导数等于零求得极值点，可得到$\omega,b$最优解的闭式解
+让偏导数等于零求得极值点，可得到  $\omega,b$ 最优解的闭式解
 
 $$\omega = \frac{\underset{i=1}{\overset{m}{\sum}}y_i(x_i-\overset{-}{x})}{\underset{i=1}{\overset{m}{\sum}}x^2_i-\frac{1}{m}(\underset{i=1}{\overset{m}{\sum}}x_i)^2}$$
 
@@ -52,11 +52,11 @@ $$f(x_i)=\omega^{T}x_i+b,使得f(x_i)\simeq y_i$$
 
 这成为**多元线性回归(multivariate linear regression)**
 
-为便于讨论，我们把$\omega$和b写成向量形式
+为便于讨论，我们把 $\omega$ 和 b写成向量形式
 
 $$\hat{\omega}^{\ast}=(\omega ; b)$$
 
-相应的，把数据集$D$表示为一个$m\times (d+1)$大小的矩阵$X$,其中每行对应一个示例，该行前d个元素对应于示例的d个属性值，最后一个元素恒置为1，即
+相应的，把数据集 $D$ 表示为一个 $m\times (d+1)$ 大小的矩阵 $X$ ,其中每行对应一个示例，该行前d个元素对应于示例的d个属性值，最后一个元素恒置为1，即
 
 $$X=\begin{pmatrix}
 x_{11}&x_{12}&\cdots&x_{1d}&1\\
@@ -78,19 +78,19 @@ $$\hat{\omega}^{\ast}=\underset{\hat{\omega}}{argmin}(y-X\hat{\omega})^{T}(y-X\h
 
 $$E_{\hat{\omega}}=(y-X\hat{\omega})^{T}(y-X\hat{\omega})$$
 
-对$\hat{\omega}$求导得到
+对 $\hat{\omega}$ 求导得到
 
 $$\frac{\partial E_{\hat{\omega}}}{\partial \hat{\omega}}=2X^{T}(X\hat{\omega}-y)$$
 
-令上式为0可得$\hat{\omega}$的闭式解,当$X^{T}X$满秩时,得
+令上式为0可得 $\hat{\omega}$ 的闭式解,当 $X^{T}X$ 满秩时,得
 
 $$\hat{\omega}^{\ast}=(X^{T}X)^{-1}X^{T}y$$
 
-令$\hat{x_{i}}=(x_{i},1)$,最终学得得多元线性模型为
+令 $\hat{x_{i}}=(x_{i},1)$ ,最终学得得多元线性模型为
 
 $$f(\hat{x_{i}})=\hat{x_{i}}(X^{T}X)^{-1}X^{T}y$$
 
-若$X^{T}X$不满秩,则对于矩阵方程可能有多个解$\hat{\omega}$,他们都能使得均方差无最小化,引入正则化项决定学习算法的归纳偏好
+若 $X^{T}X$ 不满秩,则对于矩阵方程可能有多个解 $\hat{\omega}$ ,他们都能使得均方差无最小化,引入正则化项决定学习算法的归纳偏好
 
 <h3>正则化</h3>
 
@@ -100,11 +100,11 @@ $$f(\hat{x_{i}})=\hat{x_{i}}(X^{T}X)^{-1}X^{T}y$$
 
 $$\underset{f\in \mathcal{F}}{min}\overset{N}{\underset{i=1}{\sum}}L(y_i,f(x_i))+\lambda J(f)$$
 
-正则化项可以取不同的形式，在回归问题中，损失函数是平方损失，正则化项可以是参数向量$L_2$的范数：
+正则化项可以取不同的形式，在回归问题中，损失函数是平方损失，正则化项可以是参数向量 $L_2$ 的范数：
 
 $$L(\omega)=\frac{1}{N}\overset{N}{\underset{i=1}{\sum}}(f(x_{i};w)-y_i)^2+\frac{\lambda}{2}\|\omega \|_1$$
 
-这里$\|\omega \|_{1}$ 表示参数向量 $\omega$的$L_{1}$范数
+这里 $\|\omega \|_{1}$ 表示参数向量 $\omega$的$L_{1}$ 范数
 
 <br>
 像线性回归这样的简单问题存在解析解，但不是所有的问题都存在解析解，解析解可以很好的进行数学分析，但解析解对问题的限制很严格。
@@ -112,7 +112,7 @@ $$L(\omega)=\frac{1}{N}\overset{N}{\underset{i=1}{\sum}}(f(x_{i};w)-y_i)^2+\frac
 <h3>随机梯度下降</h3>
 即使在我们无法得到解析解的情况下，我们仍然可以有效地训练模型。在许多任务上，那些难以优化的模型效果要更好。因此，弄清楚如何训练这些难以优化的模型是非常重要的。<br>
 
-梯度下降最简单的⽤法是计算损失函数（数据集中所有样本的损失均值）关于模型参数的导数（在这⾥也可以称为梯度）。在每次迭代中，我们首先随机抽样⼀个小批量$\beta$，它是由固定数量的训练样本组成的。然后，我们计算小批量的平均损失关于模型参数的导数（也可以称为梯度）。最后，我们将梯度乘以⼀个预先确定的正数η，并从
+梯度下降最简单的⽤法是计算损失函数（数据集中所有样本的损失均值）关于模型参数的导数（在这⾥也可以称为梯度）。在每次迭代中，我们首先随机抽样⼀个小批量 $\beta$ ，它是由固定数量的训练样本组成的。然后，我们计算小批量的平均损失关于模型参数的导数（也可以称为梯度）。最后，我们将梯度乘以⼀个预先确定的正数η，并从
 当前参数的值中减掉。
 
 我们用下面的数学公式来表示这一更新过程
@@ -132,9 +132,9 @@ $$\omega \leftarrow\omega-\frac{\eta}{|\mathcal{B}|}\underset{i\in\mathcal{B}}{\
 $$b \leftarrow b-\frac{\eta}{|\mathcal{B}|}\underset{i\in\mathcal{B}}{\sum}\partial_{b}l^{(i)}(\omega,b)=b-\frac{\eta}{|\mathcal{B}|}\underset{i\in\mathcal{B}}{\sum}x^{(i)}(\omega^{T}x^{(i)}+b-y^{(i)})$$
 
 
-上述公式中,$\omega$和$x$都是向量,$|\mathcal{B}|$表示每个小批量中的样本数,称为批量大小(bath size),$\eta$表示学习率(learning rate).
+上述公式中,$\omega$和$x$都是向量,  $|\mathcal{B}|$ 表示每个小批量中的样本数,称为批量大小(bath size), $\eta$ 表示学习率(learning rate).
 
-在训练了若干迭代次数后,我们记录模型参数的估计值,表示为$\hat{\omega},\hat{b}$,但是即使我们的函数是线性的且无噪声的,这些估计值也不会使得损失函数真正地达到最小值.因为算法会使得损失向最小值缓慢收敛,但却不能在有限的步数内非常精确地达到最小值.
+在训练了若干迭代次数后,我们记录模型参数的估计值,表示为 $\hat{\omega},\hat{b}$, 但是即使我们的函数是线性的且无噪声的,这些估计值也不会使得损失函数真正地达到最小值.因为算法会使得损失向最小值缓慢收敛,但却不能在有限的步数内非常精确地达到最小值.
 
 <h3>正态分布与平方损失
 </h3>
@@ -154,7 +154,7 @@ $$\epsilon \sim \mathcal{N}(0,\sigma^{2})$$
 
 $$P(y|x)=\frac{1}{\sqrt{2\pi\sigma^{2}}}exp(-\frac{1}{2\sigma^{2}}(y-w^{T}x-b)^2)$$
 
-现在,根据极大似然估计法,参数$\omega$和$b$的最优值是使整个数据集的似然最大的值:
+现在,根据极大似然估计法,参数 $\omega$ 和 $b$ 的最优值是使整个数据集的似然最大的值:
 
 $$P(y|X)=\underset{i=1}{\overset{n}{\prod}}p(y^{(i)}|x^{(i)})$$
 
@@ -164,21 +164,21 @@ $$P(y|X)=\underset{i=1}{\overset{n}{\prod}}p(y^{(i)}|x^{(i)})$$
 
 $$-logP(y|X)=\overset{n}{\underset{i=1}{\sum}}\frac{1}{2}log(2\pi\sigma^{2})+\frac{1}{2\sigma^{2}}(y^{(i)}-\omega^{T}x^{(i)}-b)^2$$
 
-只需要假设$\sigma$是某个固定常数就可以忽略第一项,因为第一项不依赖于$\omega$和$b$,现在第二项除了$\frac{1}{\sigma^{2}}$外,其余部分与均方差是一样的,而上述式子的解并不依赖于$\sigma$.因此在高斯噪声的假设下,最小化均方误差等价于对线性模型的极大似然估计
+只需要假设 $\sigma$ 是某个固定常数就可以忽略第一项,因为第一项不依赖于 $\omega$ 和 $b$ ,现在第二项除了 $\frac{1}{\sigma^{2}}$ 外,其余部分与均方差是一样的,而上述式子的解并不依赖于$\sigma$.因此在高斯噪声的假设下,最小化均方误差等价于对线性模型的极大似然估计
 
 <h2>对数几率回归(Logistic)</h2>
 
-Logistic回归是一种常见的处理二分类问题的线性模型.采用$y\in\{0,1\}$以符合logistic的分类习惯
+Logistic回归是一种常见的处理二分类问题的线性模型.采用 $y\in\{0,1\}$ 以符合logistic的分类习惯
 
 <br>
 
-为了解决连续的线性函数不适合进行分类的问题,引入非线性函数$g:\mathbb{R}^{D}\rightarrow (0,1)$来预测类别标签的后验概率$P(y=1|x)$
+为了解决连续的线性函数不适合进行分类的问题,引入非线性函数 $g:\mathbb{R}^{D}\rightarrow (0,1)$ 预测类别标签的后验概率 $P(y=1|x)$
 
 $$p(y=1|x)=g(f(x;\omega))$$
 
 其中g通常称为**激活函数(Activation Function)**,其作用是把线性函数的值域从实数区间挤压到(0,1)之间,可以表示概率
 
-在logistics回归中,我们使用Logistic函数作为激活函数,标签$y=1$的后验概率为
+在logistics回归中,我们使用Logistic函数作为激活函数,标签  $y=1$ 的后验概率为
 
 $$p(y=1|x)=\sigma (\omega^{T}x)\triangleq \frac{1}{1+exp(-\omega^{T}x)}$$
 
@@ -203,11 +203,11 @@ $\frac{p(y=1|x)}{p(y=0|x)}$为样本x的正反例后验概率的比值,称为**�
 logistic回归采用交叉熵作为损失函数,并使用梯度下降法对参数进行优化
 <br>
 
-给定N个训练样本$\{x^{(n)},y^{(n)}\}^{N}_{n=1}$,用logistic回归模型对每个样本$x^{n}$进行预测,输出其标签为1的后验概率,记为$\hat{y}^{(n)}$
+给定N个训练样本 $\{x^{(n)},y^{(n)}\}^{N}_{n=1}$ ,用logistic回归模型对每个样本 $x^{n}$ 进行预测,输出其标签为1的后验概率,记为 $\hat{y}^{(n)}$
 
 $$\hat{y}^{(n)}=\sigma(\omega^{T}x^{(n)}), \quad 1\leq n\leq N$$
 
-由于$\hat{y}^{(n)}\in \{0,1\}$,样本$\{x^{(n)},y^{(n)}\}^{N}_{n=1}$的真实条件概率为
+由于 $\hat{y}^{(n)}\in \{0,1\}$,样本 $\{x^{(n)},y^{(n)}\}^{N}_{n=1}$ 的真实条件概率为
 
 $$\begin{equation*}
 \begin{split}
@@ -225,7 +225,7 @@ $$\begin{equation*}
 \end{split}
 \end{equation*}$$
 
-风险函数$\mathcal{R}(\omega)$关于参数$\omega$的偏导数为
+风险函数 $\mathcal{R}(\omega)$ 关于参数 $\omega$ 的偏导数为
 
 $$\begin{equation*}
 \begin{split}
@@ -235,11 +235,11 @@ $$\begin{equation*}
 \end{split}
 \end{equation*}$$
 
-采用梯度下降法,Logistic回归训练的过程为:初始化$ω_{0}←0$,然后通过下式来迭代更新参数
+采用梯度下降法,Logistic回归训练的过程为:初始化 $ω_{0}←0$ ,然后通过下式来迭代更新参数
 
 $$\omega_{l+1}\leftarrow w_{l}+\alpha \frac{1}{N}\overset{N}{\underset{n=1}{\sum}}x^{(n)}(y^{(n)}-\hat{y}_{\omega_{l}}^{(n)})$$
 
-其中α为学习率,$\hat{y}_{\omega_{l}}^{(n)}$是参数为$ω_{l}$时,Logistic回归模型的输出
+其中α为学习率, $\hat{y}_{\omega_{l}}^{(n)}$ 是参数为 $ω_{l}$ 时,Logistic回归模型的输出
 
 <br>
 
