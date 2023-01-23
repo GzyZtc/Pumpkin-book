@@ -18,6 +18,8 @@ $$f(x_i)=\omega x_i + b,使得f(x_i)\simeq y_i$$
 $$(\omega ^{\ast},b^{\ast})=\underset{(\omega ,b)}{argmin}\overset{m}{\underset{i=1}{\sum}}(f(x_i)-y_i)^2=\underset{(\omega ,b)}{argmin }\overset{m}{\underset{i=1}{\sum}}(\omega x_i+b_i -y_i)^2
 $$
 
+<h3>解析解</h3>
+
 基于均方误差最小化来进行模型求解的方法称作**最小二乘法(least square method)**,在线性回归中，最小二乘法就是试图找到一条直线，使得所有样本到直线上的欧式距离之和最小
 
 求解$\omega,b$,使得
@@ -36,13 +38,19 @@ $$\omega = \frac{\underset{i=1}{\overset{m}{\sum}}y_i(x_i-\overset{-}{x})}{\unde
 
 $$b=\frac{1}{m}\underset{i=1}{\overset{m}{\sum}}(y_i-\omega x_i)$$
 
-<h3>多元线性回归</h3>
+
+
 对更一般的情形，我们试图学得
 
 $$f(x_i)=\omega^{T}x_i+b,使得f(x_i)\simeq y_i$$
 
 这成为**多元线性回归(multivariate linear regression)**
 
+为便于讨论，我们把$\omega$和b写成向量形式
+
+$$\hat{\omega}^{\ast}=(\omega ; b)$$
+
+相应的，把数据集$D$表示为一个$m\times (d+1)$大小的矩阵$X$,其中每行对应一个示例，该行前d个元素对应于示例的d个属性值，最后一个元素恒置为1，即
 
 $$X=\begin{pmatrix}
 x_{11}&x_{12}&\cdots&x_{1d}&1\\
@@ -55,6 +63,10 @@ x_{2}^{T}&1\\
 \vdots&\vdots\\ 
 x_{m}^{T}&1
 \end{pmatrix}$$
+
+像线性回归这样的简单问题存在解析解，但不是所有的问题都存在解析解，解析解可以很好的进行数学分析，但解析解对问题的限制很严格。
+
+<h3>随机梯度下降</h3>
 
 <h2>对数几率回归
 <h2>LDA
