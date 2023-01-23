@@ -64,9 +64,50 @@ x_{2}^{T}&1\\
 x_{m}^{T}&1
 \end{pmatrix}$$
 
+再把标记也写成向量形式 $y=(y_1;y_2;...;y_m)$,有
+
+$$\hat{\omega}^{\ast}=\underset{\hat{\omega}}{argmin}(y-X\hat{\omega})^{T}(y-X\hat{\omega})$$
+
+令
+
+$$E_{\hat{\omega}}=(y-X\hat{\omega})^{T}(y-X\hat{\omega})$$
+
+对$\hat{\omega}$求导得到
+
+$$\frac{\partial E_{\hat{\omega}}}{\partial \hat{\omega}}=2X^{T}(X\hat{\omega}-y)$$
+
+令上式为0可得$\hat{\omega}$的闭式解,当$X^{T}X$满秩时,得
+
+$$\hat{\omega}^{\ast}=(X^{T}X)^{-1}X^{T}y$$
+
+令$\hat{x_{i}}=(x_{i},1)$,最终学得得多元线性模型为
+
+$$f(\hat{x_{i}})=\hat{x_{i}}(X^{T}X)^{-1}X^{T}y$$
+
+若$X^{T}X$不满秩,则对于矩阵方程可能有多个解$\hat{\omega}$,他们都能使得均方差无最小化,引入正则化项决定学习算法的归纳偏好
+
+<h3>正则化</h3>
+
+模型选择的典型方法是正则化(regularization)。正则化是结构风险最小化策略的实现，是在经验风险上加一个正则化项(regularizer)或罚项(penalty term)。正则化一般是模型复杂度的单调递增，模型越复杂，正则化就越大。
+
+正则化一般具有以下形式
+
+$$\underset{f\in \mathcal{F}}{min}\overset{N}{\underset{i=1}{\sum}}L(y_i,f(x_i))+\lambda J(f)$$
+
+正则化项可以取不同的形式，在回归问题中，损失函数是平方损失，正则化项可以是参数向量$L_2$的范数：
+
+$$L(\omega)=\frac{1}{N}\overset{N}{\underset{i=1}{\sum}}(f(x_{i};w)-y_i)^2+\frac{\lambda}{2}\|\omega \|_1$$
+
+这里$\|\omega \|_{1}$ 表示参数向量 $\omega$的$L_{1}$范数
+
+<br>
 像线性回归这样的简单问题存在解析解，但不是所有的问题都存在解析解，解析解可以很好的进行数学分析，但解析解对问题的限制很严格。
 
 <h3>随机梯度下降</h3>
+即使在我们⽆法得到解析解的情况下，我们仍然可以有效地训练模型。在许多任务上，那些难以优化的模型
+效果要更好。因此，弄清楚如何训练这些难以优化的模型是⾮常重要的。<br>
+
+
 
 <h2>对数几率回归
 <h2>LDA
