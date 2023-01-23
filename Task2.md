@@ -126,7 +126,16 @@ $$\omega \leftarrow\omega-\frac{\eta}{|\mathcal{B}|}\underset{i\in\mathcal{B}}{\
 $$b \leftarrow b-\frac{\eta}{|\mathcal{B}|}\underset{i\in\mathcal{B}}{\sum}\partial_{b}l^{(i)}(\omega,b)=b-\frac{\eta}{|\mathcal{B}|}\underset{i\in\mathcal{B}}{\sum}x^{(i)}(\omega^{T}x^{(i)}+b-y^{(i)})$$
 
 
-<h3>均方损失误差函数</h3>
+上述公式中,$\omega$和$x$都是向量,$|\mathcal{B}|$表示每个小批量中的样本数,称为批量大小(bath size),$\eta$表示学习率(learning rate).
+
+在训练了若干迭代次数后,我们记录模型参数的估计值,表示为$\hat{\omega},\hat{b}$,但是即使我们的函数是线性的且无噪声的,这些估计值也不会使得损失函数真正地达到最小值.因为算法会使得损失向最小值缓慢收敛,但却不能在有限的步数内非常精确地达到最小值.
+
+<h3>正态分布与平方损失</h3>
+
+正态分布和线性回归之间的关系很密切。正态分布（normal distribution），也称为高斯分布（Gaussian distribution），最早由德国数学家高斯（Gauss）应⽤于天文学研究。简单的说，若随机变量x具有均值µ和方差σ2（标准差σ），其正态分布概率密度函数如下：
+
+$$p(x)=\frac{1}{\sqrt{2\pi\sigma^2}}exp(-\frac{1}{2\sigma^2}(x-\mu)^2)$$
+
 均方误差损失函数（简称均方损失）可以用于线性回归的⼀个原因是：我们假设了观测中包含噪声，其中噪声服从正态分布。噪声正态分布如下式:
 
 $$y=\omega^{T}x+b+\epsilon$$
