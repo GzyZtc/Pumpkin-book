@@ -160,6 +160,30 @@ $$-logP(y|X)=\overset{n}{\underset{i=1}{\sum}}\frac{1}{2}log(2\pi\sigma^{2})+\fr
 
 只需要假设$\sigma$是某个固定常数就可以忽略第一项,因为第一项不依赖于$\omega$和$b$,现在第二项除了$\frac{1}{\sigma^{2}}$外,其余部分与均方差是一样的,而上述式子的解并不依赖于$\sigma$.因此在高斯噪声的假设下,最小化均方误差等价于对线性模型的极大似然估计
 
-<h2>对数几率回归</h2>
+<h2>对数几率回归(Logistic)</h2>
+
+Logistic回归是一种常见的处理二分类问题的线性模型.采用$y\in\{0,1\}$以符合logistic的分类习惯
+
+<br>
+
+为了解决连续的线性函数不适合进行分类的问题,引入非线性函数$g:\mathbb{R}^{D}\rightarrow (0,1)$来预测类别标签的后验概率$P(y=1|x)$
+
+$$p(y=1|x)=g(f(x;\omega))$$
+
+其中g通常称为**激活函数(Activation Function)**,其作用是把线性函数的值域从实数区间挤压到(0,1)之间,可以表示概率
+
+在logistics回归中,我们使用Logistic函数作为激活函数,标签$y=1$的后验概率为
+
+$$p(y=1|x)=\sigma (\omega^{T}x)\triangleq \frac{1}{1+exp(-\omega^{T}x)}$$
+
+其中
+
+$$x=[x_1,\dots,x_D,1]^T$$
+$$\omega =[\omega_1,\dots,\omega_D,b]^T$$
+分别为D+1维的增广特征向量和增广权重向量
+
+标签y=0的后验概率为
+$$p$$
+
 <h2>LDA</h2>
 
