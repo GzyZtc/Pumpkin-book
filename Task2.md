@@ -30,9 +30,13 @@ $$E_(\omega,b)=\underset{i=1}{\overset{m}{\sum}}(y_i-\omega x_i-b)^2$$
 
 最小化的过程，成为线性回归的最小二乘**参数估计(pamameter estimation)**。对$E_{(\omega,b)}$分别对$\omega$和$b$求导，得到
 
-$$\frac{\partial E_{(\omega,b)}}{\partial \omega}=2(\omega\underset{i=1}{\overset{m}{\sum}}x_i^2-\underset{i=1}{\overset{m}{\sum}}(y_i-b)x_i)$$
+$$\begin{equation*}
+\begin{split}
+\frac{\partial E_{(\omega,b)}}{\partial \omega}&=2(\omega\underset{i=1}{\overset{m}{\sum}}x_i^2-\underset{i=1}{\overset{m}{\sum}}(y_i-b)x_i)\\
+\frac{\partial E_{(\omega,b)}}{\partial \omega}&=2(mb-\underset{i=1}{\overset{m}{\sum}}(y_i-\omega x_i))\\
+\end{split}
+\end{equation*}$$
 
-$$\frac{\partial E_{(\omega,b)}}{\partial \omega}=2(mb-\underset{i=1}{\overset{m}{\sum}}(y_i-\omega x_i))$$
 
 让偏导数等于零求得极值点，可得到$\omega,b$最优解的闭式解
 
@@ -212,6 +216,14 @@ p_r(y^{(n)}&=0|x^{(n)})=1-y^{(n)}\\
 \end{split}
 \end{equation*}$$
 
+使用交叉熵损失函数,其风险函数为
+
+$$\begin{equation*}
+\begin{split}
+\mathcal{R}(\omega)&=-\frac{1}{N}\overset{N}{\underset{n=1}{\sum}}(P_r(y^{(n)}=1|x^{(n)})log(\hat{y}^{(n)})+P_r(y^{(n)}=0|x^{(n)})log(1-\hat{y}^{(n)}))\\  
+&=-\frac{1}{N}\overset{N}{\underset{n=1}{\sum}}(p_r(y^{(n)}log\hat{y}^{(n)})+(1-y^{(n)})log(1-\hat{y}^{(n)}))
+\end{split}
+\end{equation*}$$
 
 
 
