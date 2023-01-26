@@ -83,3 +83,8 @@ $$H(Y|X)=\overset{n}{\underset{i=1}{\sum}}piH(Y|X=x_i)$$
 $$g(D,A)=H(D)-H(D|A)$$
 
 一般的，熵 $H(Y)$与条件熵 $H(Y|X)$ 之差称为互信息(mutual information)，决策树学习中的信息增益等价于训练数据集中类与特征的互信息。
+
+<br>
+
+设训练数据集为 $D$, $|D|$ 表示其样本容量。设有 $K$ 个类 $C_k，k=1,2,...,K,|C_k|$ 为属于类 $C_k$ 的样本个数, $\overset{K}{\underset{k=1}{\sum}}|C_k|=|D|$.设特征 $A$有 $n$ 个不同的取值 $\{ a_1,a_2,...,a_n\}$,根据特征 $A$的取值将 $D$ 划分为 $n$ 个子集 $D_1,D_2,...,D_n,|D_i|$ 为 $D_i$ 的样本个数, $\overset{n}{\underset{i=1}{\sum}}|D_i|=|D|$. 记子集 $D_i$ 中属于 $C_k$ 的样本的集合为 $D_{ik}$ ,即 $D_{ik}=D_i \cap C_k,|D_{ik}|$ 的样本个数。信息增益的算法如下 
+
