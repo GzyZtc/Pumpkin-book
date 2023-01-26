@@ -68,3 +68,18 @@ $$H(Y|X)=\overset{n}{\underset{i=1}{\sum}}piH(Y|X=x_i)$$
 
 其中 $p_i=P(X=x_i), i=1,2,...,n。$
 
+<br>
+
+当熵和条件熵的概率由数据估计得到时，所对应的熵与条件熵分别为经验熵(empirical entropy)和条件经验熵(empircal conditional entropy)。如果由0概率，令 $0log0=0$
+
+<br>
+
+信息增益(imformation gain)表示得知特征X的信息而使得类Y的信息的不确定性减少的程度。
+
+<br>
+
+**信息增益**:特征 $A$ 对训练数据集 $D$的信息增益 $g(D,A)$，定义为集合 $D$的经验熵 $H(D)$与特征 $A$ 给定条件下 $D$ 的经验条件熵 $H(D|A)$ 之差,即
+
+$$g(D,A)=H(D)-H(D|A)$$
+
+一般的，熵 $H(Y)$与条件熵 $H(Y|X)$ 之差称为互信息(mutual information)，决策树学习中的信息增益等价于训练数据集中类与特征的互信息。
