@@ -88,3 +88,32 @@ $$g(D,A)=H(D)-H(D|A)$$
 
 设训练数据集为 $D$, $|D|$ 表示其样本容量。设有 $K$ 个类 $C_k，k=1,2,...,K,|C_k|$ 为属于类 $C_k$ 的样本个数, $\overset{K}{\underset{k=1}{\sum}}|C_k|=|D|$.设特征 $A$有 $n$ 个不同的取值 $\{ a_1,a_2,...,a_n\}$,根据特征 $A$的取值将 $D$ 划分为 $n$ 个子集 $D_1,D_2,...,D_n,|D_i|$ 为 $D_i$ 的样本个数, $\overset{n}{\underset{i=1}{\sum}}|D_i|=|D|$. 记子集 $D_i$ 中属于 $C_k$ 的样本的集合为 $D_{ik}$ ,即 $D_{ik}=D_i \cap C_k,|D_{ik}|$ 的样本个数。信息增益的算法如下 
 
+<br>
+算法：信息增益
+<br>
+
+输入：训练数据集 $D$ 和特征 $A$
+<br>
+
+输出: 特征 $A$ 对训练数据集 $D$ 的信息增益 $g(D,A)$
+
+<ol>
+<li>
+
+计算数据集 $D$ 的经验熵 $H(D)$
+
+$$H(D)=-\overset{K}{\underset{k=1}{\sum}}\frac{|C_k|}{|D|}log_2\frac{|C_k|}{|D|}$$
+
+<li>
+
+计算特征 $A$对数据集 $D$ 的经验条件熵 $H(D|A)$
+
+$$H(D|A)=\overset{n}{\underset{i=1}{\sum}}\frac{|D_i|}{|D|}H(D_i)=-\overset{n}{\underset{i=1}{\sum}}\frac{|D_i|}{|D|}\overset{K}{\underset{k=1}{\sum}}\frac{D_{ik}}{D_i}log_2\frac{|D_{ik}|}{|D_i|}$$
+
+<li>
+
+计算信息增益
+
+$$g(D,A)=H(D)=-H(D|A)$$
+
+</ol>
