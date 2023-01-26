@@ -117,3 +117,14 @@ $$H(D|A)=\overset{n}{\underset{i=1}{\sum}}\frac{|D_i|}{|D|}H(D_i)=-\overset{n}{\
 $$g(D,A)=H(D)=-H(D|A)$$
 
 </ol>
+
+<h3>信息增益比</h3>
+以信息增益作为划分训练数据集的特征，存在偏向于选择取值较多的特征的问题。使用信息增益比(information gain ratio)可以对其进行矫正
+
+<br>
+
+**信息增益比**:特征 $A$ 对训练数据集 $D$ 的信息增益比 $g_{R}(D,A)$ 定义为其信息增益 $g(D,A)$ 与训练数据集 $D$ 关于特征 $A$ 的值的熵 $H_A(D)$ 之比，即
+
+$$g_R(D,A)=\frac{g(D,A)}{H_A(D)}$$
+
+其中 $H_A(D)=-\overset{n}{\underset{i=1}{\sum}}\frac{|D_i|}{|D|}log_2\frac{|D_i|}{|D|}$, $n$ 是特征 $A$ 取值的个数
