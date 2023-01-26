@@ -62,3 +62,9 @@ $$H(p)=-plog_2p=(1-p)log_2(1-p)$$
 
 $$P(X=x_i,Y=y_i)=p_{i,j} \qquad i=1,2,...,n;\qquad j=1,2,...,m$$
 
+条件熵 $H(Y|X)$ 表示在已知随机变量 $X$ 的条件下随机变量 $Y$的不确定性。 随机变量 $X$给定的条件下随机变量 $Y$的条件上(conditional entropy) $H(Y|X)$，定义为 $X$ 给定条件下 $Y$ 的条件概率分布的熵 $X$的数学期望
+
+$$H(Y|X)=\overset{n}{\underset{i=1}{\sum}}piH(Y|X=x_i)$$
+
+其中 $p_i=P(X=x_i), i=1,2,...,n。$
+
